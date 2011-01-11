@@ -114,4 +114,4 @@ class WSGIHandler(object):
         status = '%s %s' % (response.status_code, status_text)
         
         start_response(status, response.headers_items())
-        return [response.content]
+        return [response.content.encode('utf-8')]
